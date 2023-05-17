@@ -13,4 +13,16 @@ router.get('', async (req, res, next) => {
         console.log(err);
         next();
     }
+});
+
+
+router.get('/:id', async (req, res, next) => {
+    try {
+        const myLocation = await Locations.findById(req.params.id);
+        console.log(myLocation);
+        res.json(myLocation)
+    } catch(err) {
+        console.log(err);
+        next();
+    }
 })
