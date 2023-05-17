@@ -25,4 +25,17 @@ router.get('/:id', async (req, res, next) => {
         console.log(err);
         next();
     }
-})
+});
+
+router.post('', async (req, res, next) => {
+    try {
+        const newLocation = req.body
+        await Locations.create(req.body);
+        console.log(newLocation);
+        res.redirect('/')
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+});
+
