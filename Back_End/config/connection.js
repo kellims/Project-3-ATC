@@ -13,6 +13,7 @@ mongoose.connection.on('error', (error) => {
     console.log('MongoDB connection error ', error)
 })
 
+
 mongoose.connection.on('disconnected', () => {
     console.log('MongoDB disconnected ⚡️ 🔌 ⚡️')
 })
