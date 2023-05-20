@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
 app.use('/', locationsController);
 app.use('/information', informationController);
 
+app.get('/*', (req, res) => {
+    res.json({comment: "404 Error"});
+})
+
 
 app.listen(PORT, () => {
     console.log(`$ 💲 ＄ Server is listening to PORT ${PORT}`)
