@@ -11,6 +11,11 @@ const locationsSchema = new mongoose.Schema (
         date: {
             type: String,
             required: false
+        },
+        
+        img: {
+            type: String,
+            required: true
         }
     }
 );
