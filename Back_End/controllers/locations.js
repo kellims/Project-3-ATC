@@ -27,16 +27,16 @@ router.get('', async (req, res, next) => {
     }
 });
 
-router.get('/seed', async (req, res, next) => {
-    try {
-        await Locations.deleteMany({});
-        await Locations.insertMany(seededData);
-        res.redirect('/locations');
-    } catch(err) {
-        console.log(err);
-        next();
-    }
-})
+// router.get('/seed', async (req, res, next) => {
+//     try {
+//         await Locations.deleteMany({});
+//         await Locations.insertMany(seededData);
+//         res.redirect('/locations');
+//     } catch(err) {
+//         console.log(err);
+//         next();
+//     }
+// })
 
 
 router.get('/:id', async (req, res, next) => {
@@ -61,6 +61,16 @@ router.post('', async (req, res, next) => {
         next();
     }
 });
+
+router.delete('/:id', async (req, res) => {
+    try {
+        const deletedItem = await Locations.findByIdAndDelete(req.params.id);
+        res.redirect('/locations');
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+})
 
 module.exports = router;
 
