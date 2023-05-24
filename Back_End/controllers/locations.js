@@ -62,6 +62,16 @@ router.post('', async (req, res, next) => {
     }
 });
 
+router.put('/:id', async (req, res, next) => {
+    try {
+        const updatedLocation = await Locations.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect(`/locations/${req.params.id}`);
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+})
+
 router.delete('/:id', async (req, res) => {
     try {
         const deletedItem = await Locations.findByIdAndDelete(req.params.id);
