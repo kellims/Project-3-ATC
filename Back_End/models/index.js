@@ -3,6 +3,6 @@ require('../config/connection.js');
 
 
 module.exports = {
-    locations: require('./Locations'),
+    Locations: require('./Locations'),
    
 }
