@@ -19,6 +19,12 @@ const informationSchema = new mongoose.Schema (
 
         address: {
             type: String,
+        },
+
+        location: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'location',
+            required: true
         }
     }
 );
