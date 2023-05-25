@@ -55,7 +55,7 @@ router.post('', async (req, res, next) => {
         let newLocation = req.body
         await Locations.create(req.body);
         console.log(newLocation);
-        res.redirect('/')
+        res.redirect('/locations')
     } catch(err) {
         console.log(err);
         next();
@@ -78,7 +78,7 @@ router.delete('/:id', async (req, res) => {
         res.redirect('/locations');
     } catch(err) {
         console.log(err);
-        next();
+        // next();
     }
 })
 
