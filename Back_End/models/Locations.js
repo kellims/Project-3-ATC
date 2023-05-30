@@ -16,12 +16,7 @@ const locationsSchema = new mongoose.Schema (
         img: {
             type: String,
             required: true
-        },
-        
-        locationInformation: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'information'
-        }]
+        }
     }
 );
 
