@@ -17,7 +17,6 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended:false }));
 
 app.get('/', (req, res) => {
-    // res.json("Hello World")
     res.redirect('/locations');
 })
 
